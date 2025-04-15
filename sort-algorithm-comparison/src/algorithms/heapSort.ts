@@ -2,6 +2,7 @@ export async function heapSort(
     array: number[],
     setArray: (arr: number[]) => void,
     setHighlighted: (hl: number[]) => void,
+    setIsSorting: React.Dispatch<React.SetStateAction<boolean>>,
     delay = 200
   ) {
     async function heapify(n: number, i: number): Promise<void> {
@@ -35,5 +36,6 @@ export async function heapSort(
     }
   
     setHighlighted([]);
+    setIsSorting(false)
   }
   

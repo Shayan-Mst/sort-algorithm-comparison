@@ -8,30 +8,46 @@ import { selectionSort } from "../algorithms/selectionSort";
 import { mergeSort } from "../algorithms/mergeSort";
 import generateRandomArray from "./../utils/generateArray";
 import handleCustomInput from "../utils/customInput";
+import Timer from "./Timer";
 
 
 const SortingVisualizer = () => {
+
     const [array, setArray] = useState<number[]>([]);
     const [highlighted, setHighlighted] = useState<number[]>([]);
     const [customInput, setCustomInput] = useState("");
     const [sortAlg,setSortAlg] = useState('Bubble');
-    const [flag,setFlag] = useState("");
+    const [flag,setFlag] = useState("1");
+    const [isSorting, setIsSorting] = useState(false);
+    const [resetSignal, setResetSignal] = useState(false);
+    
+
   
     const generateRandomArrayFunc = () => {
+     
      
       const randomArray = generateRandomArray(20)
       setArray(randomArray);
     };
 
-    const HandleAlgorithm = (e: any) => {setFlag(e.target.id)}
+    const HandleAlgorithm = (e: any) => {
+      
+      setFlag(e.target.id)
+      setResetSignal(true)
+    
+    
+    }
   
   
     const handleStart = () => {
-      if(flag === "1") bubbleSort(array, setArray, setHighlighted);
-      else if(flag === "2") mergeSort(array, setArray, setHighlighted);
-      else if(flag === "3") quickSort(array, setArray, setHighlighted);
-      else if(flag === "4") heapSort(array, setArray, setHighlighted);
-      else if(flag === "5") selectionSort(array, setArray, setHighlighted);
+
+      setIsSorting(true);
+     
+      if(flag === "1") bubbleSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "2") mergeSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "3") quickSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "4") heapSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "5") selectionSort(array, setArray, setHighlighted ,setIsSorting);
       
     };
   
@@ -41,6 +57,7 @@ const SortingVisualizer = () => {
     
    
     <div className="min-h-screen grid items-end bg-gray-100 p-8 text-center">
+      
     <div className="self-start">
         <h1 className="text-2xl font-bold text-center text-slate-700 inline"> {sortAlg} Sort Visualizer</h1>
         <select
@@ -55,6 +72,7 @@ const SortingVisualizer = () => {
           <option onClick={HandleAlgorithm} id="4" value="Heap">Heap Sort</option>
           <option onClick={HandleAlgorithm} id="5" value="Selection">Selection Sort</option>
         </select>
+        <Timer isSorting={isSorting} resetSignal={resetSignal} />
 
         </div>
       <Bars array={array} highlighted={highlighted} />
@@ -63,6 +81,7 @@ const SortingVisualizer = () => {
         onStart={handleStart}
         onCustomChange={(e)=>handleCustomInput(e,setCustomInput,setArray)}
         customInput={customInput}
+        isSorting={isSorting}
       />
     </div>
     

@@ -1,7 +1,8 @@
 export const bubbleSort = async (
     array: number[],
     setArray: React.Dispatch<React.SetStateAction<number[]>>,
-    setHighlighted: React.Dispatch<React.SetStateAction<number[]>>
+    setHighlighted: React.Dispatch<React.SetStateAction<number[]>>,
+    setIsSorting: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     const arr = [...array];
     const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -19,5 +20,6 @@ export const bubbleSort = async (
     }
   
     setHighlighted([]);
+    setIsSorting(false)
   };
   

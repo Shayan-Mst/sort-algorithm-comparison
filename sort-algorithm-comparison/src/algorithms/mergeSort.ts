@@ -2,6 +2,7 @@ export async function mergeSort(
     array: number[],
     setArray: (arr: number[]) => void,
     setHighlighted: (hl: number[]) => void,
+    setIsSorting: React.Dispatch<React.SetStateAction<boolean>>,
     delay = 200
   ) {
     async function merge(
@@ -54,5 +55,6 @@ export async function mergeSort(
   
     await sort(0, array.length);
     setHighlighted([]);
+    setIsSorting(false)
   }
   
