@@ -46,14 +46,14 @@ const SortingVisualizer = () => {
 
       setIsSorting(true);
      
-      if(flag === "1") bubbleSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "2") mergeSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "3") quickSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "4") heapSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "5") selectionSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "6") countingSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "7") insertionSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "8") randomQuickSort(array, setArray, setHighlighted ,setIsSorting);
+      if(flag === "1") bubbleSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "2") mergeSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "3") quickSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "4") heapSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "5") selectionSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "6") countingSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "7") insertionSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
+      else if(flag === "8") randomQuickSort(array, setArray, setHighlighted ,setIsSorting,setResetSignal);
       
     };
   
@@ -68,7 +68,7 @@ const SortingVisualizer = () => {
         <h1 className="text-2xl font-bold text-center text-slate-700 inline"> {sortAlg} Sort Visualizer</h1>
         <select
           value={sortAlg}
-         
+          disabled={isSorting}
           onChange={(e)=>setSortAlg(e.target.value)}
           className="px-3 mx-2 py-2 rounded bg-gray-700 text-white text-center"
         >

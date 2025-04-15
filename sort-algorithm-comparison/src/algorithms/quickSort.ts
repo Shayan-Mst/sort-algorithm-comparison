@@ -3,6 +3,7 @@ export async function quickSort(
     setArray: (arr: number[]) => void,
     setHighlighted: (hl: number[]) => void,
     setIsSorting: React.Dispatch<React.SetStateAction<boolean>>,
+    setResetSignal: React.Dispatch<React.SetStateAction<boolean>>,
     delay = 200
   ) {
     async function partition(low: number, high: number): Promise<number> {
@@ -34,5 +35,6 @@ export async function quickSort(
     await sort(0, array.length - 1);
     setHighlighted([]);
     setIsSorting(false)
+    setResetSignal(false)
   }
   

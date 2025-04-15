@@ -23,6 +23,7 @@ const Timer: React.FC<TimerProps> = ({ isSorting, resetSignal }) => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
+       
       }
     };
   }, [isSorting]);

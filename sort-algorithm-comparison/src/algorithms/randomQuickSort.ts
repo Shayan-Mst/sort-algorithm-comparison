@@ -2,7 +2,8 @@ export async function randomQuickSort(
     arr: number[],
     setArray: React.Dispatch<React.SetStateAction<number[]>>,
     setHighlighted: React.Dispatch<React.SetStateAction<number[]>>,
-    setIsSorting: React.Dispatch<React.SetStateAction<boolean>>
+    setIsSorting: React.Dispatch<React.SetStateAction<boolean>>,
+    setResetSignal: React.Dispatch<React.SetStateAction<boolean>>
   ) {
     const array = [...arr];
     const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -35,4 +36,5 @@ export async function randomQuickSort(
     await quickSort(0, array.length - 1);
     setHighlighted([]);
     setIsSorting(false);
+    setResetSignal(false)
   }

@@ -3,6 +3,7 @@ export async function selectionSort(
     setArray: (arr: number[]) => void,
     setHighlighted: (hl: number[]) => void,
     setIsSorting: React.Dispatch<React.SetStateAction<boolean>>,
+    setResetSignal: React.Dispatch<React.SetStateAction<boolean>>,
     delay = 200
   ) {
     const n = array.length;
@@ -26,5 +27,6 @@ export async function selectionSort(
   
     setHighlighted([]);
     setIsSorting(false)
+    setResetSignal(false)
   }
   
