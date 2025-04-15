@@ -1,54 +1,114 @@
-# React + TypeScript + Vite
+📊 Sort Algorithm Comparison
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive and educational React + TypeScript application that visualizes and compares multiple sorting algorithms in real-time. This tool is designed to help users understand the inner workings of various sorting techniques through dynamic animations and user-friendly controls.​
+🚀 Features
 
-Currently, two official plugins are available:
+    Visualize Multiple Sorting Algorithms: Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort (Randomized), Heap Sort, and Counting Sort.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Custom Input: Manually input arrays or generate random ones.
 
-## Expanding the ESLint configuration
+    Real-Time Timer: Track the duration of sorting processes with a dynamic timer.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    Algorithm Selection: Choose which algorithm to visualize using intuitive buttons.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+    Responsive Design: Optimized for various screen sizes and devices.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    Educational Insights: Understand how different algorithms operate and compare their efficiencies.​
+    GitHub+1GitHub+1
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🧰 Technologies Used
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+    Frontend: React, TypeScript, Tailwind CSS
+
+    State Management: React Hooks
+
+    Styling: Tailwind CSS for rapid UI development
+
+    Deployment: GitHub Pages​
+    GitHub
+
+📸 Screenshots
+
+​Visual representation of sorting algorithms in action.​
+🛠️ Installation & Setup
+
+    Clone the repository:
+
+    git clone https://github.com/Shayan-Mst/sort-algorithm-comparison.git
+    cd sort-algorithm-comparison
+
+    Install dependencies:
+
+    npm install
+
+    Start the development server:
+
+    npm run dev
+
+    Open in browser:
+
+    Navigate to http://localhost:5173 to view the application.
+
+📂 Project Structure
+
+sort-algorithm-comparison/
+├── public/                 # Static assets
+├── src/
+│   ├── algorithms/         # Sorting algorithm implementations
+│   ├── components/         # Reusable React components
+│   ├── utils/              # Utility functions
+│   ├── App.tsx             # Main application component
+│   └── main.tsx            # Entry point
+├── tailwind.config.js      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+├── vite.config.ts          # Vite configuration
+└── package.json            # Project metadata and scripts
+
+🧪 Available Scripts
+
+    ​npm run dev: Starts the development server.
+
+    ​npm run build: Builds the app for production.
+
+    ​npm run preview: Previews the production build locally.​
+    GitHub+3GitHub+3GitHub+3
+
+📖 Usage
+
+    Select an Algorithm: Click on the desired sorting algorithm button.
+
+    Input Array: Enter a custom array or generate a random one.
+
+    Start Sorting: Initiate the sorting process to visualize the algorithm in action.
+
+    Observe: Watch the real-time visualization and monitor the timer to understand the algorithm's efficiency.​
+
+📚 Educational Value
+
+This application serves as a learning tool for students, educators, and anyone interested in understanding sorting algorithms. By visualizing the step-by-step process, users can grasp the concepts of algorithm efficiency, stability, and behavior with different data sets.​
+🤝 Contributing
+
+Contributions are welcome!​
+
+    Fork the repository.
+
+    Create a new branch:
+
+    git checkout -b feature/YourFeature
+
+    Commit your changes:
+
+    git commit -m 'Add YourFeature'
+
+    Push to the branch:
+
+    git push origin feature/YourFeature
+
+    Open a pull request.
+
+📄 License
+
+This project is licensed under the MIT License.​
+📬 Contact
+
+For any inquiries or feedback, please contact Shayan Mst.​
