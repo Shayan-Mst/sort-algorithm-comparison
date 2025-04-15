@@ -1,19 +1,30 @@
+import React from "react";
 import { motion } from "framer-motion";
 
-type BarProps = {
-  height: number;
-  active?: boolean;
+interface BarsProps {
+  array: number[];
+  highlighted: number[];
+}
+
+const Bars: React.FC<BarsProps> = ({ array, highlighted }) => {
+  return (
+    <div className="flex items-end justify-center h-64 gap-1">
+      {array.map((value, index) => (
+        <motion.div
+          key={index}
+          layout
+          animate={{
+            height: `${value * 4}px`,
+            backgroundColor: highlighted.includes(index)
+              ? "#ef4444" // red-500
+              : "#3b82f6", // blue-500
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="w-4 rounded"
+        />
+      ))}
+    </div>
+  );
 };
 
-export default function Bar({ height, active = false }: BarProps) {
-  return (
-    <motion.div
-      animate={{
-        height: `${height}%`,
-        backgroundColor: active ? "#f43f5e" : "#3b82f6",
-      }}
-      transition={{ duration: 0.3 }}
-      className="w-2 rounded-sm mx-0.5"
-    />
-  );
-}
+export default Bars;
