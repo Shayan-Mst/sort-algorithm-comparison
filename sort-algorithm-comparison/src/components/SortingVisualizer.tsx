@@ -9,6 +9,7 @@ import { mergeSort } from "../algorithms/mergeSort";
 import generateRandomArray from "./../utils/generateArray";
 import handleCustomInput from "../utils/customInput";
 import Timer from "./Timer";
+import { countingSort } from "../algorithms/countingSort";
 
 
 const SortingVisualizer = () => {
@@ -48,6 +49,9 @@ const SortingVisualizer = () => {
       else if(flag === "3") quickSort(array, setArray, setHighlighted ,setIsSorting);
       else if(flag === "4") heapSort(array, setArray, setHighlighted ,setIsSorting);
       else if(flag === "5") selectionSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "6") countingSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "7") selectionSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "8") selectionSort(array, setArray, setHighlighted ,setIsSorting);
       
     };
   
@@ -71,6 +75,7 @@ const SortingVisualizer = () => {
           <option onClick={HandleAlgorithm} id="3" value="Quick">Quick Sort</option>
           <option onClick={HandleAlgorithm} id="4" value="Heap">Heap Sort</option>
           <option onClick={HandleAlgorithm} id="5" value="Selection">Selection Sort</option>
+          <option onClick={HandleAlgorithm} id="6" value="Counting">Counting Sort</option>
         </select>
         <Timer isSorting={isSorting} resetSignal={resetSignal} />
 
