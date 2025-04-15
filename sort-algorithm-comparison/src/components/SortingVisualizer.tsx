@@ -7,6 +7,7 @@ import { heapSort } from "../algorithms/heapSort";
 import { selectionSort } from "../algorithms/selectionSort";
 import { mergeSort } from "../algorithms/mergeSort";
 import generateRandomArray from "./../utils/generateArray";
+import handleCustomInput from "../utils/customInput";
 
 
 const SortingVisualizer = () => {
@@ -34,14 +35,7 @@ const SortingVisualizer = () => {
       
     };
   
-    const handleCustomInput = (val: string) => {
-      setCustomInput(val);
-      const parsed = val
-        .split(",")
-        .map((x) => parseInt(x.trim()))
-        .filter((n) => !isNaN(n));
-      setArray(parsed);
-    };
+    
 
   return (
     
@@ -67,7 +61,7 @@ const SortingVisualizer = () => {
       <Controls
         onGenerate={generateRandomArrayFunc}
         onStart={handleStart}
-        onCustomChange={handleCustomInput}
+        onCustomChange={(e)=>handleCustomInput(e,setCustomInput,setArray)}
         customInput={customInput}
       />
     </div>
