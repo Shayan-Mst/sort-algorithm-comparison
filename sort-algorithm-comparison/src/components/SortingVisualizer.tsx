@@ -11,6 +11,7 @@ import handleCustomInput from "../utils/customInput";
 import Timer from "./Timer";
 import { countingSort } from "../algorithms/countingSort";
 import { insertionSort } from "../algorithms/insertionSort";
+import { randomQuickSort } from "../algorithms/randomQuickSort";
 
 
 const SortingVisualizer = () => {
@@ -52,7 +53,7 @@ const SortingVisualizer = () => {
       else if(flag === "5") selectionSort(array, setArray, setHighlighted ,setIsSorting);
       else if(flag === "6") countingSort(array, setArray, setHighlighted ,setIsSorting);
       else if(flag === "7") insertionSort(array, setArray, setHighlighted ,setIsSorting);
-      else if(flag === "8") selectionSort(array, setArray, setHighlighted ,setIsSorting);
+      else if(flag === "8") randomQuickSort(array, setArray, setHighlighted ,setIsSorting);
       
     };
   
@@ -78,6 +79,7 @@ const SortingVisualizer = () => {
           <option onClick={HandleAlgorithm} id="5" value="Selection">Selection Sort</option>
           <option onClick={HandleAlgorithm} id="6" value="Counting">Counting Sort</option>
           <option onClick={HandleAlgorithm} id="7" value="Insertion">Insertion Sort</option>
+          <option onClick={HandleAlgorithm} id="8" value="Random Quick">Random Quick Sort</option>
         </select>
         <Timer isSorting={isSorting} resetSignal={resetSignal} />
 
