@@ -14,13 +14,13 @@ const Controls: React.FC<ControlsProps> = ({
   customInput,
 }) => {
   return (
-    <div className="flex flex-col items-center gap-4 mt-4">
+    <div className="flex flex-col items-center gap-4">
       <input
         type="text"
         placeholder="e.g. 5,10,15,7"
         value={customInput}
         onChange={(e) => onCustomChange(e.target.value)}
-        className="border border-gray-300 p-2 rounded"
+        className="border border-gray-300 p-2 rounded w-1/4"
       />
       <div className="flex gap-4">
         <button

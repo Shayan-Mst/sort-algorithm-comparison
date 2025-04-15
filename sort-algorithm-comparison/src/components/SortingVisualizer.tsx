@@ -9,6 +9,7 @@ const SortingVisualizer = () => {
     const [array, setArray] = useState<number[]>([]);
     const [highlighted, setHighlighted] = useState<number[]>([]);
     const [customInput, setCustomInput] = useState("");
+    const [sortAlg,setSortAlg] = useState('bubble');
   
     const generateRandomArrayFunc = () => {
      
@@ -30,8 +31,12 @@ const SortingVisualizer = () => {
     };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8 text-center">
-      <h1 className="text-3xl font-bold mb-8">Bubble Sort Visualizer</h1>
+    
+   
+    <div className="min-h-screen grid items-end bg-gray-100 p-8 text-center">
+    <div className="self-start">
+        <h1 className="text-3xl font-bold text-center text-slate-700"> {sortAlg} Sort Visualizer</h1>
+        </div>
       <Bars array={array} highlighted={highlighted} />
       <Controls
         onGenerate={generateRandomArrayFunc}
@@ -40,6 +45,7 @@ const SortingVisualizer = () => {
         customInput={customInput}
       />
     </div>
+    
   );
 };
 
